@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './PlayerArea.css';
 import PlayerNameplates from './PlayerNameplates/PlayerNameplates';
 
-const PlayerArea = (props) => {
+const playerArea = (props) => {
     return (
         <div className={classes.PlayerArea}>
             <PlayerNameplates />
@@ -10,4 +10,4 @@ const PlayerArea = (props) => {
     )
 }
 
-export default PlayerArea;
+export default playerArea;

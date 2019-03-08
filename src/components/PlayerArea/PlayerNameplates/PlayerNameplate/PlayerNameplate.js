@@ -2,11 +2,11 @@ import React from 'react';
 
 import classes from './PlayerNameplate.css';
 
-const PlayerNameplate = (props) => {
+const playerNameplate = (props) => {
 
     return (
         <div className={classes.Nameplate}>PlayerName</div>
     )
 }
 
-export default PlayerNameplate;
+export default playerNameplate;

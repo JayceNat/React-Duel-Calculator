@@ -2,7 +2,7 @@ import React from 'react';
 import PlayerNameplate from './PlayerNameplate/PlayerNameplate';
 import classes from './PlayerNameplates.css';
 
-const PlayerNameplates = (props) => {
+const playerNameplates = (props) => {
     return (
         <div className={classes.PlayerNameplates}>
             <PlayerNameplate />
@@ -11,4 +11,4 @@ const PlayerNameplates = (props) => {
     )
 }
 
-export default PlayerNameplates;
+export default playerNameplates;
