@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import PlayerArea from './PlayerArea/PlayerArea';
+import Aux from './hoc/Auxiliary';
+import PlayerArea from './components/PlayerArea/PlayerArea';
 
 class App extends Component {
   render() {
     return (
-      <div>
+      <Aux>
         <PlayerArea />
-      </div>
+      </Aux>
     );
   }
 }
