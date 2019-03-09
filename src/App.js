@@ -7,7 +7,9 @@ class App extends Component {
   render() {
     return (
       <Aux>
-        <PlayerArea />
+        <div className="App">
+          <PlayerArea />
+        </div>
       </Aux>
     );
   }
