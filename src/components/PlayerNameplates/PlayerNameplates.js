@@ -1,14 +1,14 @@
 import React from 'react';
 import PlayerNameplate from './PlayerNameplate/PlayerNameplate';
-import './PlayerNameplates.css';
+import classes from './PlayerNameplates.module.css';
 
 const playerNameplates = (props) => {
     return (
-        <div className="PlayerNameplates">
+        <div className={classes.PlayerNameplates}>
             <PlayerNameplate />
             <PlayerNameplate />
         </div>
-    )
-}
+    );
+};
 
 export default playerNameplates;

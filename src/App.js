@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Aux from './hoc/Auxiliary';
-import PlayerArea from './components/PlayerArea/PlayerArea';
+import PlayerArea from './containers/PlayerArea/PlayerArea';
 
 class App extends Component {
   render() {
