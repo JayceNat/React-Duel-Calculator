@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import PlayerArea from '../PlayerArea/PlayerArea';
+import GlobalArea from '../GlobalArea/GlobalArea';
 import Aux from '../../hoc/Auxiliary';
 
 class DuelCalculator extends Component {
@@ -13,6 +14,8 @@ class DuelCalculator extends Component {
     render () {
         return (
             <Aux>
+                <PlayerArea />
+                <GlobalArea />
             </Aux>
         );
     }
