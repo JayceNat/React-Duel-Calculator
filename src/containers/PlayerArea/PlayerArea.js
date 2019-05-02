@@ -1,10 +1,10 @@
 import React from 'react';
 import classes from './PlayerArea.module.css';
-import PlayerAvatars from '../../components/PlayerAvatars/PlayerAvatars';
-import PlayerNameplates from '../../components/PlayerNameplates/PlayerNameplates';
-import PlayerHealthPoints from '../../components/PlayerHealthPoints/PlayerHealthPoints';
-import PlayerHealthBars from '../../components/PlayerHealthBars/PlayerHealthBars';
-import PlayerHealthButtons from '../../components/PlayerHealthButtons/PlayerHealthButtons';
+import PlayerAvatars from '../../components/PlayerArea/PlayerAvatars/PlayerAvatars';
+import PlayerNameplates from '../../components/PlayerArea/PlayerNameplates/PlayerNameplates';
+import PlayerHealthPoints from '../../components/PlayerArea/PlayerHealthPoints/PlayerHealthPoints';
+import PlayerHealthBars from '../../components/PlayerArea/PlayerHealthBars/PlayerHealthBars';
+import PlayerHealthButtons from '../../components/PlayerArea/PlayerHealthButtons/PlayerHealthButtons';
 
 const playerArea = (props) => {
     return (
