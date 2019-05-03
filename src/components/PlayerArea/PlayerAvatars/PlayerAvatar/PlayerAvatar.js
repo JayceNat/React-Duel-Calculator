@@ -3,7 +3,7 @@ import classes from './PlayerAvatar.module.css';
 
 const playerAvatar = (props) => {
     return (
-        <div className={classes.PlayerAvatar}>.img</div>
+        <img className={classes.PlayerAvatar} src={props.playerAvatar} />
     );
 };
 

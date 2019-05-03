@@ -3,7 +3,10 @@ import classes from './PlayerNameplate.module.css';
 
 const playerNameplate = (props) => {
     return (
-        <div className={classes.Nameplate}>PlayerName</div>
+        <input
+            className={classes.Nameplate}
+            value={props.playerName}
+            onChange={props.nameChanged} />
     );
 };
 
