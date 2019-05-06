@@ -4,11 +4,11 @@ import PlayerAvatars from '../../components/PlayerArea/PlayerAvatars/PlayerAvata
 import PlayerNameplates from '../../components/PlayerArea/PlayerNameplates/PlayerNameplates';
 import PlayerLifePoints from '../../components/PlayerArea/PlayerLifePoints/PlayerLifePoints';
 import PlayerHealthBars from '../../components/PlayerArea/PlayerHealthBars/PlayerHealthBars';
-import PlayerHealthButtons from '../../components/PlayerArea/PlayerHealthButtons/PlayerHealthButtons';
+import PlayerHealthControls from '../../components/PlayerArea/PlayerHealthControls/PlayerHealthControls';
 
 const playerArea = (props) => {
     return (
-        <div className={classes.PlayerArea}>
+        <div className={classes.playerArea}>
             <PlayerAvatars playerAvatars={props.playerAvatars} />
             <PlayerNameplates 
                 playerNames={props.playerNames} 
@@ -16,8 +16,7 @@ const playerArea = (props) => {
             <PlayerLifePoints 
                 playerLifePoints={props.playerLifePoints} />
             <PlayerHealthBars />
-            <PlayerHealthButtons />
-            <PlayerHealthButtons />
+            <PlayerHealthControls />
         </div>
     );
 };

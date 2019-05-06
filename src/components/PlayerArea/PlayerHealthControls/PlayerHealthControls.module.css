@@ -1,0 +1,19 @@
+.playerControls {
+    display: block;
+}
+
+.playerOneHealthControls {
+    display: inline-block;
+    width: 49%;
+    border-style: double;
+    border-color: darkslateblue;
+    margin-right: 2px;
+}
+
+.playerTwoHealthControls {
+    display: inline-block;
+    width: 49%;
+    border-style: double;
+    border-color: darkslateblue;
+    margin-left: 2px;
+}

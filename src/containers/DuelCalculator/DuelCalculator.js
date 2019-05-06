@@ -7,7 +7,7 @@ import Banner2 from '../../assets/Images/Backgrounds/pic_banner2.jpg';
 
 const STARTING_LIFE_POINTS = {
     player1: 8000,
-    player1: 8000
+    player2: 8000
 }
 
 class DuelCalculator extends Component {
@@ -38,8 +38,8 @@ class DuelCalculator extends Component {
     }
 
     changeLifePointHandler = (player, action) => {
-        const oldLifePoints = this.state.lifePoints[player];
-        const oldPointCountVal = this.state.pointCounterValue;
+        let oldLifePoints = this.state.lifePoints[player];
+        let oldPointCountVal = this.state.pointCounterValue;
         let changedLifePoints = 0;
         let changedHealthBarVal = 0;
         switch (action) {

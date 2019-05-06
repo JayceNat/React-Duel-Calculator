@@ -8,7 +8,7 @@ const playerAvatars = (props) => {
         return <PlayerAvatar playerAvatar={props.playerAvatars[avKey]} />;
     });    
     return (
-        <div className={classes.PlayerAvatar}>
+        <div className={classes.playerAvatar}>
             {playerAvatar}
         </div>
     );

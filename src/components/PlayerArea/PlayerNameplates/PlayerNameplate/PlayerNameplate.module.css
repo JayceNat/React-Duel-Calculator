@@ -1,8 +1,10 @@
-.Nameplate {
+.nameplate {
     display: inline-block;
-    border: 1px inset antiquewhite;
+    width: 49%;
+    border: 1px outset goldenrod;
     margin: 3px;
-    color: red;
-    background: black;
+    font-size: 18px;
+    color: antiquewhite;
+    background: rgb(24, 24, 24);
     text-align: center;
 }

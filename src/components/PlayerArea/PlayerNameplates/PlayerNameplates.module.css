@@ -1,10 +1,4 @@
-.PlayerNameplates {
+.playerNameplates {
     text-align: center;
-    width: 500px;
-    background-color: black;
-    display: inline-block;
-    font-size: calc(10px + 2vmin);
-    color: brown;
-    font: italic;
-    border-color: brown;
+    display: block;
 }

@@ -3,7 +3,7 @@ import classes from './GlobalArea.module.css';
 
 const globalArea = (props) => {
     return (
-        <div className={classes.GlobalArea} />
+        <div className={classes.globalArea} />
     );
 };
 

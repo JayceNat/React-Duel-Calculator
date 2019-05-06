@@ -4,7 +4,7 @@ import classes from './PlayerHealthBars.module.css';
 
 const playerHealthBars = (props) => {
     return (
-        <div className={classes.PlayerHealthBars}>
+        <div className={classes.playerHealthBars}>
             <PlayerHealthBar />
             <PlayerHealthBar />
         </div>

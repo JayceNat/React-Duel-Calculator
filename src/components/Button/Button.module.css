@@ -1,0 +1,70 @@
+.Button {
+    height: 40px;
+}
+
+.halfButton {
+    background-image: radial-gradient(goldenrod, indigo);
+    border-color: indigo;
+    color: white;
+    text-shadow: 1.5px 1.5px black;
+    font-size: 24px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 100%;
+    text-align: center;
+    align-content: center;
+    display: block;
+    float: top;
+    margin-bottom: 3px;
+}
+
+.halfButton:hover {
+    background-image: radial-gradient(royalblue, silver);
+    border-color: royalblue;
+    color: gold;
+}
+
+.minusButton {
+    background-image: radial-gradient(maroon, indigo);
+    border-color: indigo;
+    color: white;
+    text-shadow: 1.5px 1.5px black;
+    font-size: 24px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 50%;
+    text-align: center;
+    align-content: center;
+    display: block;
+    float: left;
+}
+
+.minusButton:hover {
+    background-image: radial-gradient(silver, maroon);
+    border-color: red;
+    color: black;
+    text-shadow: 0px 0px black;
+}
+
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.plusButton {
+    background-image: radial-gradient(forestgreen, indigo);
+    border-color: indigo;
+    color: white;
+    text-shadow: 1.5px 1.5px black;
+    font-size: 24px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: 50%;
+    text-align: center;
+    align-content: center;
+    display: block;
+}
+
+.plusButton:hover {
+    background-image: radial-gradient(silver, forestgreen);
+    border-color: springgreen;
+    color: black;
+    text-shadow: 0px 0px black;
+}

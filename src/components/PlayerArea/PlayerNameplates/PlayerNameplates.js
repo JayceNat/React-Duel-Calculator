@@ -3,15 +3,15 @@ import PlayerNameplate from './PlayerNameplate/PlayerNameplate';
 import classes from './PlayerNameplates.module.css';
 
 const playerNameplates = (props) => {
-    const playerNameSummary = Object.keys(props.playerNames)
+    const playerNM = Object.keys(props.playerNames)
     .map(pnKey => {
         return <PlayerNameplate 
             playerName={props.playerNames[pnKey]} 
             nameChanged={() => props.playerNameChanged()} />;
     });
     return (
-        <div className={classes.PlayerNameplates}>
-            {playerNameSummary}
+        <div className={classes.playerNameplates}>
+            {playerNM}
         </div>
     );
 };

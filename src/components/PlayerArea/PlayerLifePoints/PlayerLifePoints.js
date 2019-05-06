@@ -9,7 +9,7 @@ const playerLifePoints = (props) => {
             playerLifePoints={props.playerLifePoints[lpKey]} />;
     }); 
     return (
-        <div className={classes.PlayerLifePoints}>
+        <div className={classes.playerLifePoints}>
             {playerLP}
         </div>
     );
