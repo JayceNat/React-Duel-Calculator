@@ -1,3 +1,16 @@
-.playerHealthBar {
+.playerHealthJar {
     display: inline-block;
+    position: relative;
+    height: 15px;
+    width: 48.1%;
+    border-radius: 50px;
+    border: 5px double darkslategray;
+    margin: 3px;
+}
+
+.playerHealthLiquid {
+    background-image: -webkit-radial-gradient(darkgreen, #21b670);
+    height: 100%;
+    border-radius: inherit;
+    transition: width .2s ease-in;
 }

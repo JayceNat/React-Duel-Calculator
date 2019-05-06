@@ -44,8 +44,8 @@
     text-shadow: 0px 0px black;
 }
 
-.disabled {
-    opacity: 0.6;
+.minusButton:disabled {
+    opacity: 0.1;
     cursor: not-allowed;
 }
 
@@ -67,4 +67,9 @@
     border-color: springgreen;
     color: black;
     text-shadow: 0px 0px black;
+}
+
+.plusButton:disabled {
+    opacity: 0.1;
+    cursor: not-allowed;
 }

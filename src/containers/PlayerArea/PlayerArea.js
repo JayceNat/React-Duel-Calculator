@@ -15,8 +15,11 @@ const playerArea = (props) => {
                 playerNameChanged={() => props.changePlayerNameHandler} />
             <PlayerLifePoints 
                 playerLifePoints={props.playerLifePoints} />
-            <PlayerHealthBars />
-            <PlayerHealthControls />
+            <PlayerHealthBars 
+                healthPercent={props.playerHealthPercent} />
+            <PlayerHealthControls 
+                controlClicked={() => props.playerControlClicked}
+                controlDisabled={props.playerControlDisabled}/>
         </div>
     );
 };

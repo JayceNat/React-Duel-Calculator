@@ -32,7 +32,8 @@ class DuelCalculator extends Component {
     }
 
     changePlayerNameHandler = (player, newName) => {
-        const updatedPlayerNames = {...this.state.PlayerNames};
+        console.log("YOO");
+        let updatedPlayerNames = {...this.state.PlayerNames};
         updatedPlayerNames[player] = newName;
         this.setState({playerNames: updatedPlayerNames});
     }
@@ -73,7 +74,10 @@ class DuelCalculator extends Component {
                     playerAvatars={this.state.playerAvatars}
                     playerNames={this.state.playerNames}
                     playerNameChanged={this.changePlayerNameHandler} 
-                    playerLifePoints={this.state.lifePoints} />
+                    playerLifePoints={this.state.lifePoints} 
+                    playerHealthPercent={this.state.healthBarPercent}
+                    playerControlClicked={this.changeLifePointHandler}
+                    playerControlDisabled={this.state.pointCounterValue <= 0} />
                 <GlobalArea />
             </Aux>
         );

@@ -23,7 +23,8 @@ const playerHealthControls = (props) => (
                     key={p1Ctrl.type}
                     btnType={p1Ctrl.btnType}
                     label={props.label}
-                    clicked={() => props.controlClicked(p1Ctrl.player, p1Ctrl.type)}>
+                    clicked={() => props.controlClicked(p1Ctrl.player, p1Ctrl.type)}
+                    disabled={props.controlDisabled}>
                     {p1Ctrl.label}
                 </Button>
             ))}
@@ -35,7 +36,8 @@ const playerHealthControls = (props) => (
                     key={p2Ctrl.type}
                     btnType={p2Ctrl.btnType}
                     label={props.label}
-                    clicked={() => props.controlClicked(p2Ctrl.player, p2Ctrl.type)}>
+                    clicked={() => props.controlClicked(p2Ctrl.player, p2Ctrl.type)}
+                    disabled={props.controlDisabled}>
                     {p2Ctrl.label}
                 </Button>
             ))}

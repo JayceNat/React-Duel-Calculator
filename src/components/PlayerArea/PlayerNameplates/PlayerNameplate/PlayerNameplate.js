@@ -4,8 +4,9 @@ import classes from './PlayerNameplate.module.css';
 const playerNameplate = (props) => {
     return (
         <input
+            type='text'
             className={classes.nameplate}
-            value={props.playerName}
+            placeholder={props.playerName}
             onChange={props.nameChanged} />
     );
 };

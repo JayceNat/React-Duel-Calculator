@@ -6,6 +6,7 @@ const playerNameplates = (props) => {
     const playerNM = Object.keys(props.playerNames)
     .map(pnKey => {
         return <PlayerNameplate 
+            key={pnKey}
             playerName={props.playerNames[pnKey]} 
             nameChanged={() => props.playerNameChanged()} />;
     });
