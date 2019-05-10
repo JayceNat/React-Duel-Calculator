@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import PlayerArea from '../PlayerArea/PlayerArea';
 import GlobalArea from '../GlobalArea/GlobalArea';
 import Aux from '../../hoc/Auxiliary';
-import Banner1 from '../../assets/Images/Backgrounds/pic_banner1.jpg';
-import Banner2 from '../../assets/Images/Backgrounds/pic_banner2.jpg';
 
 const STARTING_LIFE_POINTS = {
     player1: 8000,
@@ -11,34 +10,15 @@ const STARTING_LIFE_POINTS = {
 }
 
 class DuelCalculator extends Component {
-    state = {
-        playerAvatars: {
-            player1: Banner1,
-            player2: Banner2
-        },
-        playerNames: {
-            player1: "Player 1",
-            player2: "Player 2"
-        },
-        lifePoints: {
-            player1: 8000,
-            player2: 8000
-        },
-        healthBarPercent: {
-            player1: 100,
-            player2: 100
-        },
-        pointCounterValue: 0
-    }
-
     changePlayerNameHandler = (player, newName) => {
-        console.log("YOO");
+        console.log("PLAYER NAME UPDATE");
         let updatedPlayerNames = {...this.state.PlayerNames};
         updatedPlayerNames[player] = newName;
         this.setState({playerNames: updatedPlayerNames});
     }
 
     changeLifePointHandler = (player, action) => {
+        console.log("LIFE POINT UPDATE");
         let oldLifePoints = this.state.lifePoints[player];
         let oldPointCountVal = this.state.pointCounterValue;
         let changedLifePoints = 0;
@@ -71,17 +51,46 @@ class DuelCalculator extends Component {
         return (
             <Aux>
                 <PlayerArea 
-                    playerAvatars={this.state.playerAvatars}
-                    playerNames={this.state.playerNames}
-                    playerNameChanged={this.changePlayerNameHandler} 
-                    playerLifePoints={this.state.lifePoints} 
-                    playerHealthPercent={this.state.healthBarPercent}
-                    playerControlClicked={this.changeLifePointHandler}
-                    playerControlDisabled={this.state.pointCounterValue <= 0} />
+                    playerAvatars={this.props.avatars}
+                    playerNames={this.props.names}
+                    playerLifePoints={this.props.lifePoints} 
+                    playerHealthPercent={this.props.healthPercents}
+                    playerControlClicked={this.props.onHalfButtonClicked}
+                    playerControlDisabled={this.props.ctrVal <= 0} />
                 <GlobalArea />
             </Aux>
         );
     }
 }
 
-export default DuelCalculator;
+const mapStateToProps = state => {
+    return {
+        avatars: state.playerAvatars,
+        names: state.playerNames,
+        lifePoints: state.lifePoints,
+        healthPercents: state.healthBarPercent,
+        ctrVal: state.pointCounterValue
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onAvatarChanged: () => dispatch({type: 'CHANGE_AVATAR'}),
+        onPlayerNameChanged: () => dispatch({type: 'CHANGE_NAME'}),
+        onHalfButtonClicked: () => dispatch({type: 'HALF_LP'}),
+        onPlusButtonClicked: () => dispatch({type: 'ADD_LP'}),
+        onMinusButtonClicked: () => dispatch({type: 'SUBTRACT_LP'}),
+        onClearCounterClicked: () => dispatch({type: 'CLEAR_COUNTER'}),
+        onCounterAddFiftyClicked: () => dispatch({type: 'COUNTER_ADD_50'}),
+        onCounterAddHundredClicked: () => dispatch({type: 'COUNTER_ADD_100'}),
+        onCounterAddFiveHundredClicked: () => dispatch({type: 'COUNTER_ADD_500'}),
+        onCounterAddThousandClicked: () => dispatch({type: 'COUNTER_ADD_1000'}),
+        onCounterAddFiveThousandClicked: () => dispatch({type: 'COUNTER_ADD_5000'}),
+        onCoinTossClicked: () => dispatch({type: 'COIN_TOSS'}),
+        onDiceRollClicked: () => dispatch({type: 'DICE_ROLL'}),
+        onNewGameClicked: () => dispatch({type: 'NEW_GAME'}),
+        onResetClicked: () => dispatch({type: 'RESET'})
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(DuelCalculator);

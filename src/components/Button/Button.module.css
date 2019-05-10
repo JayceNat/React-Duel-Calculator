@@ -49,6 +49,14 @@
     cursor: not-allowed;
 }
 
+.minusButton:disabled:hover {
+    cursor: not-allowed;
+    background-image: radial-gradient(maroon, indigo);
+    border-color: indigo;
+    color: white;
+    text-shadow: 1.5px 1.5px black;
+}
+
 .plusButton {
     background-image: radial-gradient(forestgreen, indigo);
     border-color: indigo;
@@ -72,4 +80,12 @@
 .plusButton:disabled {
     opacity: 0.1;
     cursor: not-allowed;
+}
+
+.plusButton:disabled:hover {
+    cursor: not-allowed;
+    background-image: radial-gradient(forestgreen, indigo);
+    border-color: indigo;
+    color: white;
+    text-shadow: 1.5px 1.5px black;
 }
