@@ -3,9 +3,9 @@
 }
 
 .halfButton {
-    background-image: radial-gradient(goldenrod, indigo);
-    border-color: indigo;
-    color: white;
+    background-image: radial-gradient(black, indigo);
+    border-color: black;
+    color: plum;
     text-shadow: 1.5px 1.5px black;
     font-size: 24px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -18,17 +18,17 @@
 }
 
 .halfButton:hover {
-    background-image: radial-gradient(royalblue, silver);
-    border-color: royalblue;
-    color: gold;
+    background-image: radial-gradient(teal, indigo);
+    border-color: purple;
+    color: goldenrod;
 }
 
 .minusButton {
-    background-image: radial-gradient(maroon, indigo);
-    border-color: indigo;
-    color: white;
+    background-image: radial-gradient(black, darkslateblue);
+    border-color: black;
+    color: plum;
     text-shadow: 1.5px 1.5px black;
-    font-size: 24px;
+    font-size: 28px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     width: 50%;
     text-align: center;
@@ -38,9 +38,9 @@
 }
 
 .minusButton:hover {
-    background-image: radial-gradient(silver, maroon);
+    background-image: radial-gradient(black, maroon);
     border-color: red;
-    color: black;
+    color: red;
     text-shadow: 0px 0px black;
 }
 
@@ -51,16 +51,16 @@
 
 .minusButton:disabled:hover {
     cursor: not-allowed;
-    background-image: radial-gradient(maroon, indigo);
-    border-color: indigo;
-    color: white;
+    background-image: radial-gradient(black, darkslateblue);
+    border-color: black;
+    color: plum;
     text-shadow: 1.5px 1.5px black;
 }
 
 .plusButton {
-    background-image: radial-gradient(forestgreen, indigo);
-    border-color: indigo;
-    color: white;
+    background-image: radial-gradient(black, darkslateblue);
+    border-color: black;
+    color: plum;
     text-shadow: 1.5px 1.5px black;
     font-size: 24px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -71,9 +71,9 @@
 }
 
 .plusButton:hover {
-    background-image: radial-gradient(silver, forestgreen);
+    background-image: radial-gradient(black, forestgreen);
     border-color: springgreen;
-    color: black;
+    color: springgreen;
     text-shadow: 0px 0px black;
 }
 
@@ -84,9 +84,9 @@
 
 .plusButton:disabled:hover {
     cursor: not-allowed;
-    background-image: radial-gradient(forestgreen, indigo);
-    border-color: indigo;
-    color: white;
+    background-image: radial-gradient(black, darkslateblue);
+    border-color: black;
+    color: plum;
     text-shadow: 1.5px 1.5px black;
 }
 
