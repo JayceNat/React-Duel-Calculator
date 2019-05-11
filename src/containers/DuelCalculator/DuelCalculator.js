@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PlayerArea from '../PlayerArea/PlayerArea';
 import GlobalArea from '../GlobalArea/GlobalArea';
+import FooterArea from '../FooterArea/FooterArea';
 import Aux from '../../hoc/Auxiliary';
 
 const STARTING_LIFE_POINTS = {
@@ -58,6 +59,7 @@ class DuelCalculator extends Component {
                     playerControlClicked={this.props.onHalfButtonClicked}
                     playerControlDisabled={this.props.ctrVal <= 0} />
                 <GlobalArea />
+                <FooterArea />
             </Aux>
         );
     }

@@ -1,5 +1,5 @@
-import Banner1 from '../assets/Images/Backgrounds/pic_banner1.jpg';
-import Banner2 from '../assets/Images/Backgrounds/pic_banner2.jpg';
+import Banner1 from '../assets/images/Backgrounds/pic_banner1.jpg';
+import Banner2 from '../assets/images/Backgrounds/pic_banner2.jpg';
 
 const initialState = {
     playerAvatars: {
