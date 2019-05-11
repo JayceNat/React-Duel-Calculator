@@ -91,17 +91,17 @@
 }
 
 .newGameButton {
-    background-image: radial-gradient(goldenrod, black);
-    border-color: black;
-    color: black;
+    background-color: black;
+    border-color: rgb(85, 72, 0);
+    color: goldenrod;
     width: 250px;
     height: 30px;
 }
 
 .newGameButton:hover {
-    background-image: radial-gradient(black, goldenrod);
-    border-color: goldenrod;
-    color: goldenrod;
+    background-image: radial-gradient(black, darkgoldenrod);
+    border-color: gold;
+    color: gold;
 }
 
 .newGameButton:disabled {
@@ -110,15 +110,15 @@
 }
 
 .newGameButton:disabled:hover {
-    background-image: radial-gradient(goldenrod, black);
-    border-color: black;
-    color: black;
+    background-color: black;
+    border-color: rgb(85, 72, 0);
+    color: goldenrod;
 }
 
 .resetButton {
-    background-image: radial-gradient(red, black);
-    border-color: black;
-    color: black;
+    background-color: black;
+    border-color: darkred;
+    color: darkred;
     width: 50px;
     height: 25px;
 }
