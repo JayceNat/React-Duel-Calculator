@@ -8,3 +8,8 @@
     background: rgb(24, 24, 24);
     text-align: center;
 }
+
+.nameplate:hover {
+    border-color: rgb(255, 239, 145);
+    border-style: inset;
+}
