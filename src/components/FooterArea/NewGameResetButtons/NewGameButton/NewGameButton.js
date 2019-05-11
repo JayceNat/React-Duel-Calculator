@@ -4,7 +4,15 @@ import Button from '../../../Button/Button';
 
 const newGameButton = (props) => (
     <div className={classes.newGameButton}>
-        <Button />
+        <Button
+            id={'newGame'} 
+            key={'newGameBtn'}
+            btnType={'newGameButton'}
+            label={'New Game'}
+            // clicked={}
+            disabled={props.controlDisabled}>
+            New Game
+        </Button>
     </div>
 );
 

@@ -45,7 +45,7 @@
 }
 
 .minusButton:disabled {
-    opacity: 0.1;
+    opacity: 0.2;
     cursor: not-allowed;
 }
 
@@ -78,7 +78,7 @@
 }
 
 .plusButton:disabled {
-    opacity: 0.1;
+    opacity: 0.2;
     cursor: not-allowed;
 }
 
@@ -88,4 +88,43 @@
     border-color: indigo;
     color: white;
     text-shadow: 1.5px 1.5px black;
+}
+
+.newGameButton {
+    background-image: radial-gradient(goldenrod, black);
+    border-color: black;
+    color: black;
+    width: 250px;
+    height: 30px;
+}
+
+.newGameButton:hover {
+    background-image: radial-gradient(black, goldenrod);
+    border-color: goldenrod;
+    color: goldenrod;
+}
+
+.newGameButton:disabled {
+    opacity: 0.25;
+    cursor: not-allowed;
+}
+
+.newGameButton:disabled:hover {
+    background-image: radial-gradient(goldenrod, black);
+    border-color: black;
+    color: black;
+}
+
+.resetButton {
+    background-image: radial-gradient(red, black);
+    border-color: black;
+    color: black;
+    width: 50px;
+    height: 25px;
+}
+
+.resetButton:hover {
+    background-image: radial-gradient(black, red);
+    border-color: red;
+    color: red;
 }
