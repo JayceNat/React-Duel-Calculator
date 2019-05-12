@@ -20,6 +20,10 @@ const playerArea = (props) => {
             <PlayerHealthControls 
                 halfBtnClick={props.halfButtonClicked}
                 controlDisabled={props.playerControlDisabled}/>
+            <button
+                onClick={() => props.halfButtonClicked(0)}>
+                CLICK ME!
+            </button>
         </div>
     );
 };

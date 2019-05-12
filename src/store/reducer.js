@@ -38,14 +38,14 @@ const reducer = (state = initialState, action) => {
     }
     if (action.type === actionTypes.HALF_LP) {
         const newState = Object.assign({}, state);
-        newState.initialState = false;
+        newState.isNewGameState = false;
         newState.lifePoints[action.player] = state.lifePoints[action.player] / 2;
         newState.healthBarPercent[action.player] = (newState.lifePoints[action.player] / defaultLifePoints).toFixed(0) * 100;
         return newState;
     }
     if (action.type === actionTypes.ADD_LP) {
         const newState = Object.assign({}, state);
-        newState.initialState = false;
+        newState.isNewGameState = false;
         newState.lifePoints[action.player] = state.lifePoints[action.player] + state.pointCounterValue;
         const newHealthPercent = (newState.lifePoints[action.player] / defaultLifePoints).toFixed(0) * 100;
         newState.healthBarPercent[action.player] = newHealthPercent > 100 ? 100 : newHealthPercent;
@@ -55,7 +55,7 @@ const reducer = (state = initialState, action) => {
     if (action.type === actionTypes.SUBTRACT_LP) {
         const newState = Object.assign({}, state);
         const newPoints = state.lifePoints[action.player] - state.pointCounterValue
-        newState.initialState = false;
+        newState.isNewGameState = false;
         newState.lifePoints[action.player] = (newPoints < 0) ? 0 : newPoints;
         const newHealthPercent = (newState.lifePoints[action.player] / defaultLifePoints).toFixed(0) * 100;
         newState.healthBarPercent[action.player] = newHealthPercent > 100 ? 100 : newHealthPercent;
@@ -74,7 +74,7 @@ const reducer = (state = initialState, action) => {
     }
     if (action.type === actionTypes.NEW_GAME) {
         const newState = Object.assign({}, state);
-        newState.initialState = true;
+        newState.isNewGameState = true;
         newState.lifePoints.player1 = defaultLifePoints;
         newState.lifePoints.player2 = defaultLifePoints;
         newState.healthBarPercent.player1 = 100;
@@ -85,7 +85,7 @@ const reducer = (state = initialState, action) => {
     if (action.type === actionTypes.RESET) {
         const newState = Object.assign({}, state);
         alert("OK!");
-        newState.initialState = true;
+        newState.isNewGameState = true;
         newState.playerAvatars.player1 = Banner1;
         newState.playerAvatars.player2 = Banner2;
         newState.playerNames.player1 = '';
