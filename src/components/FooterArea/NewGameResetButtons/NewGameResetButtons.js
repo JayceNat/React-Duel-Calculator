@@ -5,7 +5,8 @@ import ResetButton from './ResetButton/ResetButton';
 
 const newGameResetButtons = (props) => (
     <div className={classes.newGameResetButtons}>
-        <NewGameButton />
+        <NewGameButton 
+            isNewGameState={props.isNewGameState} />
         <ResetButton />
     </div>
 );

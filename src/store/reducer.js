@@ -2,6 +2,7 @@ import Banner1 from '../assets/images/Backgrounds/pic_banner1.jpg';
 import Banner2 from '../assets/images/Backgrounds/pic_banner2.jpg';
 
 const initialState = {
+    isNewGameState: true,
     playerAvatars: {
         player1: Banner1,
         player2: Banner2

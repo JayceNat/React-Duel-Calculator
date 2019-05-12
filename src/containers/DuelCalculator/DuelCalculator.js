@@ -58,8 +58,10 @@ class DuelCalculator extends Component {
                     playerHealthPercent={this.props.healthPercents}
                     playerControlClicked={this.props.onHalfButtonClicked}
                     playerControlDisabled={this.props.ctrVal <= 0} />
-                <GlobalArea />
-                <FooterArea />
+                <GlobalArea 
+                    pointCounterValue={this.props.ctrVal} />
+                <FooterArea 
+                    isNewGameState={this.props.newGameState} />
             </Aux>
         );
     }
@@ -67,6 +69,7 @@ class DuelCalculator extends Component {
 
 const mapStateToProps = state => {
     return {
+        newGameState: state.isNewGameState,
         avatars: state.playerAvatars,
         names: state.playerNames,
         lifePoints: state.lifePoints,

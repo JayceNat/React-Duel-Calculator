@@ -50,7 +50,6 @@
 }
 
 .minusButton:disabled:hover {
-    cursor: not-allowed;
     background-image: radial-gradient(black, darkslateblue);
     border-color: black;
     color: plum;
@@ -83,11 +82,39 @@
 }
 
 .plusButton:disabled:hover {
-    cursor: not-allowed;
     background-image: radial-gradient(black, darkslateblue);
     border-color: black;
     color: plum;
     text-shadow: 1.5px 1.5px black;
+}
+
+.pointCounterButton {
+    display: block;
+    width: 100%;
+    border: 1px;
+    border-color: goldenrod;
+    border-style: groove;
+    background-image: radial-gradient(teal, indigo);
+    color: goldenrod;
+    text-shadow: 1px 1px 1px black;
+    height: 30px;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.pointCounterButton:hover span {
+    display: none;
+}
+
+.pointCounterButton:hover {
+    background-image: radial-gradient(black, indigo);
+    border-color: goldenrod;
+}
+
+.pointCounterButton:hover::before {
+    content: "Clear Count";
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .newGameButton {
@@ -96,6 +123,7 @@
     color: goldenrod;
     width: 250px;
     height: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .newGameButton:hover {
@@ -110,7 +138,7 @@
 }
 
 .newGameButton:disabled:hover {
-    background-color: black;
+    background-image: radial-gradient(black, black);
     border-color: rgb(85, 72, 0);
     color: goldenrod;
 }
@@ -121,6 +149,7 @@
     color: darkred;
     width: 50px;
     height: 25px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .resetButton:hover {

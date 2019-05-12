@@ -4,7 +4,8 @@ import NewGameResetButtons from '../../components/FooterArea/NewGameResetButtons
 
 const footerArea= (props) => (
     <div className={classes.footerArea}>
-        <NewGameResetButtons />
+        <NewGameResetButtons 
+            isNewGameState={props.isNewGameState}/>
     </div>
 );
 
