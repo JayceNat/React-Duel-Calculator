@@ -1,3 +1,7 @@
 .globalArea {
-    background-color: #111111;
+    width: 40%;
+    margin-top: 6px;
+    border: 3px;
+    border-style: double;
+    border-color: darkslateblue;
 }

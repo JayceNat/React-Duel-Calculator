@@ -1,3 +1,6 @@
 .pointCounterValueButton {
-    width: 100%;
+    display: inline-block;
+    width: 48%;
+    height: 30px;
+    margin: 3px;
 }
