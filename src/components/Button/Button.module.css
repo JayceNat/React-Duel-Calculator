@@ -139,6 +139,23 @@
     border-style: outset;
 }
 
+.coinTossButton, .diceRollButton {
+    display: inline-block;
+    width: 49%;
+    height: 30px;
+    margin-right: 2px;
+    background-color: black;
+    border-color: purple;
+    color: plum;
+    opacity: .6;
+}
+
+.coinTossButton:hover, .diceRollButton:hover {
+    background-image: radial-gradient(black, purple);
+    border-color: plum;
+    opacity: 1;
+}
+
 .newGameButton {
     background-color: black;
     border-color: rgb(85, 72, 0);
