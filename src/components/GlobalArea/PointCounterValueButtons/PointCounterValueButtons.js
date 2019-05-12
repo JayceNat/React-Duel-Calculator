@@ -4,7 +4,9 @@ import PointCounterValueButton from './PointCounterValueButton/PointCounterValue
 
 const pointCounterValueButtons = (props) => (
     <div className={classes.pointCounterValueButtons}>
-        <PointCounterValueButton content={'+10'} />
+        <PointCounterValueButton 
+            content={'+10'} 
+            counterAddButtonClicked={() => props.counterAddButtonClicked} />
         <PointCounterValueButton content={'+50'} />
         <PointCounterValueButton content={'+100'} />
         <PointCounterValueButton content={'+500'} />

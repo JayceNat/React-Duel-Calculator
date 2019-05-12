@@ -9,7 +9,7 @@ const resetButton = (props) => (
             key={'resetBtn'}
             btnType={'resetButton'}
             label={'Reset'}
-            // clicked={}
+            onClick={props.clicked}
             disabled={props.controlDisabled}>
             Reset
         </Button>

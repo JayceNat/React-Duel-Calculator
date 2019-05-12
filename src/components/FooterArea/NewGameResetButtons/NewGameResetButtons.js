@@ -7,7 +7,8 @@ const newGameResetButtons = (props) => (
     <div className={classes.newGameResetButtons}>
         <NewGameButton 
             isNewGameState={props.isNewGameState} />
-        <ResetButton />
+        <ResetButton 
+            clicked={props.resetBtnClick} />
     </div>
 );
 

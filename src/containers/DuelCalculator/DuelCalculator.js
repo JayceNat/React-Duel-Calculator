@@ -4,6 +4,7 @@ import PlayerArea from '../PlayerArea/PlayerArea';
 import GlobalArea from '../GlobalArea/GlobalArea';
 import FooterArea from '../FooterArea/FooterArea';
 import Aux from '../../hoc/Auxiliary';
+import * as actionTypes from '../../store/actions';
 
 const STARTING_LIFE_POINTS = {
     player1: 8000,
@@ -56,12 +57,15 @@ class DuelCalculator extends Component {
                     playerNames={this.props.names}
                     playerLifePoints={this.props.lifePoints} 
                     playerHealthPercent={this.props.healthPercents}
-                    playerControlClicked={this.props.onHalfButtonClicked}
+                    halfButtonClicked={this.props.onHalfButtonClicked}
                     playerControlDisabled={this.props.ctrVal <= 0} />
                 <GlobalArea 
-                    pointCounterValue={this.props.ctrVal} />
+                    pointCounterValue={this.props.ctrVal} 
+                    counterAddButtonClicked={() => this.props.onCounterAddClicked} />
                 <FooterArea 
-                    isNewGameState={this.props.newGameState} />
+                    isNewGameState={this.props.newGameState} 
+                    newGameClicked={this.props.onNewGameClicked}
+                    resetButtonClicked={this.props.onResetClicked} />
             </Aux>
         );
     }
@@ -80,21 +84,15 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onAvatarChanged: () => dispatch({type: 'CHANGE_AVATAR'}),
-        onPlayerNameChanged: () => dispatch({type: 'CHANGE_NAME'}),
-        onHalfButtonClicked: () => dispatch({type: 'HALF_LP'}),
-        onPlusButtonClicked: () => dispatch({type: 'ADD_LP'}),
-        onMinusButtonClicked: () => dispatch({type: 'SUBTRACT_LP'}),
-        onClearCounterClicked: () => dispatch({type: 'CLEAR_COUNTER'}),
-        onCounterAddFiftyClicked: () => dispatch({type: 'COUNTER_ADD_50'}),
-        onCounterAddHundredClicked: () => dispatch({type: 'COUNTER_ADD_100'}),
-        onCounterAddFiveHundredClicked: () => dispatch({type: 'COUNTER_ADD_500'}),
-        onCounterAddThousandClicked: () => dispatch({type: 'COUNTER_ADD_1000'}),
-        onCounterAddFiveThousandClicked: () => dispatch({type: 'COUNTER_ADD_5000'}),
-        onCoinTossClicked: () => dispatch({type: 'COIN_TOSS'}),
-        onDiceRollClicked: () => dispatch({type: 'DICE_ROLL'}),
-        onNewGameClicked: () => dispatch({type: 'NEW_GAME'}),
-        onResetClicked: () => dispatch({type: 'RESET'})
+        onAvatarChanged: (playerNum) => dispatch({type: actionTypes.CHANGE_AVATAR, player: playerNum}),
+        onNameChanged: (playerNum) => dispatch({type: actionTypes.CHANGE_NAME, player: playerNum}),
+        onHalfButtonClicked: (playerNum) => dispatch({type: actionTypes.HALF_LP, player: playerNum}),
+        onPlusButtonClicked: (playerNum) => dispatch({type: actionTypes.ADD_LP, player: playerNum}),
+        onMinusButtonClicked: (playerNum) => dispatch({type: actionTypes.SUBTRACT_LP, player: playerNum}),
+        onClearCounterClicked: () => dispatch({type: actionTypes.CLEAR_COUNTER}),
+        onCounterAddClicked: (amountToAdd) => dispatch({type: actionTypes.ADD_TO_COUNTER, amount: amountToAdd}),
+        onNewGameClicked: () => dispatch({type: actionTypes.NEW_GAME}),
+        onResetClicked: () => dispatch({type: actionTypes.RESET})
     };
 };
 

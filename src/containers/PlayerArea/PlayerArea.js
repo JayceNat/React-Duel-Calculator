@@ -18,7 +18,7 @@ const playerArea = (props) => {
             <PlayerHealthBars 
                 healthPercent={props.playerHealthPercent} />
             <PlayerHealthControls 
-                controlClicked={() => props.playerControlClicked}
+                halfBtnClick={props.halfButtonClicked}
                 controlDisabled={props.playerControlDisabled}/>
         </div>
     );
