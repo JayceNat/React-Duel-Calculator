@@ -41,6 +41,9 @@ const reducer = (state = initialState, action) => {
         newState.isNewGameState = false;
         newState.lifePoints[action.player] = state.lifePoints[action.player] / 2;
         newState.healthBarPercent[action.player] = (newState.lifePoints[action.player] / defaultLifePoints).toFixed(0) * 100;
+        
+        console.log(newState);
+        
         return newState;
     }
     if (action.type === actionTypes.ADD_LP) {

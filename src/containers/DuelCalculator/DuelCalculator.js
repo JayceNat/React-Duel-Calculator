@@ -1,64 +1,39 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PlayerArea from '../PlayerArea/PlayerArea';
+import PlayerOneArea from '../PlayerOneArea/PlayerOneArea';
+import PlayerTwoArea from '../PlayerTwoArea/PlayerTwoArea';
 import GlobalArea from '../GlobalArea/GlobalArea';
 import FooterArea from '../FooterArea/FooterArea';
 import Aux from '../../hoc/Auxiliary';
 import * as actionTypes from '../../store/actions';
 
-const STARTING_LIFE_POINTS = {
-    player1: 8000,
-    player2: 8000
-}
-
 class DuelCalculator extends Component {
-    changePlayerNameHandler = (player, newName) => {
-        console.log("PLAYER NAME UPDATE");
-        let updatedPlayerNames = {...this.state.PlayerNames};
-        updatedPlayerNames[player] = newName;
-        this.setState({playerNames: updatedPlayerNames});
-    }
-
-    changeLifePointHandler = (player, action) => {
-        console.log("LIFE POINT UPDATE");
-        let oldLifePoints = this.state.lifePoints[player];
-        let oldPointCountVal = this.state.pointCounterValue;
-        let changedLifePoints = 0;
-        let changedHealthBarVal = 0;
-        switch (action) {
-            case "add":
-                changedLifePoints = oldLifePoints + oldPointCountVal;
-                changedHealthBarVal = (changedLifePoints / STARTING_LIFE_POINTS[player]) <= 100 || 100;
-                break;
-            case "minus":
-                changedLifePoints = (oldLifePoints - oldPointCountVal) > 0 || 0
-                changedHealthBarVal = (changedLifePoints / STARTING_LIFE_POINTS[player]) > 0 || 0;
-                break;
-            case "half":
-                changedLifePoints = (oldLifePoints / 2).toFixed(0);
-                changedHealthBarVal = (changedLifePoints / STARTING_LIFE_POINTS[player]);
-                break;
-            default:
-                break;
-        }
-        const updatedLifePoints = {...this.state.lifePoints};
-        const updatedHealthBarVal = {...this.state.healthBarPercent};
-        updatedLifePoints[player] = changedLifePoints;
-        updatedHealthBarVal[player] = changedHealthBarVal;
-        oldPointCountVal = 0;
-        this.setState({lifePoints: updatedLifePoints, healthBarPercent: updatedHealthBarVal, pointCounterValue: oldPointCountVal});
-    }
-
     render () {
         return (
             <Aux>
-                <PlayerArea 
-                    playerAvatars={this.props.avatars}
-                    playerNames={this.props.names}
-                    playerLifePoints={this.props.lifePoints} 
-                    playerHealthPercent={this.props.healthPercents}
+                <PlayerOneArea 
+                    playerNumber={'player1'}
+                    playerAvatar={this.props.avatars.player1}
+                    playerAvatarChanged={this.props.onAvatarChanged}
+                    playerName={this.props.names.player1}
+                    playerNameChanged={this.props.onNameChanged}
+                    playerLifePoints={this.props.lifePoints.player1} 
+                    playerHealthPercent={this.props.healthPercents.player1}
                     halfButtonClicked={this.props.onHalfButtonClicked}
+                    plusButtonClicked={this.props.onPlusButtonClicked}
+                    minusButtonClicked={this.props.onMinusButtonClicked}
                     playerControlDisabled={this.props.ctrVal <= 0} />
+                {/* <PlayerTwoArea 
+                    playerNumber={'player2'}
+                    playerAvatar={this.props.avatars.player2}
+                    playerName={this.props.names.player2}
+                    playerNameChanged={this.props.onNameChanged}
+                    playerLifePoints={this.props.lifePoints.player2} 
+                    playerHealthPercent={this.props.healthPercents.player2}
+                    halfButtonClicked={this.props.onHalfButtonClicked}
+                    plusButtonClicked={this.props.onPlusButtonClicked}
+                    minusButtonClicked={this.props.onMinusButtonClicked}
+                    playerControlDisabled={this.props.ctrVal <= 0} /> */}
                 <GlobalArea 
                     pointCounterValue={this.props.ctrVal} 
                     counterAddButtonClicked={() => this.props.onCounterAddClicked} />
@@ -84,11 +59,11 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onAvatarChanged: (playerNum) => dispatch({type: actionTypes.CHANGE_AVATAR, player: playerNum}),
-        onNameChanged: (playerNum) => dispatch({type: actionTypes.CHANGE_NAME, player: playerNum}),
-        onHalfButtonClicked: (playerNum) => dispatch({type: actionTypes.HALF_LP, player: playerNum}),
-        onPlusButtonClicked: (playerNum) => dispatch({type: actionTypes.ADD_LP, player: playerNum}),
-        onMinusButtonClicked: (playerNum) => dispatch({type: actionTypes.SUBTRACT_LP, player: playerNum}),
+        onAvatarChanged: (playerNumber, playerAvatar) => dispatch({type: actionTypes.CHANGE_AVATAR, player: playerNumber, newAvatar: playerAvatar}),
+        onNameChanged: (playerNumber, playerName) => dispatch({type: actionTypes.CHANGE_NAME, player: playerNumber, newName: playerName}),
+        onHalfButtonClicked: (playerNumber) => dispatch({type: actionTypes.HALF_LP, player: playerNumber}),
+        onPlusButtonClicked: (playerNumber) => dispatch({type: actionTypes.ADD_LP, player: playerNumber}),
+        onMinusButtonClicked: (playerNumber) => dispatch({type: actionTypes.SUBTRACT_LP, player: playerNumber}),
         onClearCounterClicked: () => dispatch({type: actionTypes.CLEAR_COUNTER}),
         onCounterAddClicked: (amountToAdd) => dispatch({type: actionTypes.ADD_TO_COUNTER, amount: amountToAdd}),
         onNewGameClicked: () => dispatch({type: actionTypes.NEW_GAME}),

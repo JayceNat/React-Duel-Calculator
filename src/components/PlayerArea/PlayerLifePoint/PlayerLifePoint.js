@@ -3,7 +3,9 @@ import classes from './PlayerLifePoint.module.css';
 
 const playerLifePoint = (props) => {
     return (
-        <div className={classes.playerLifePoint}>{props.playerLifePoints}</div>
+        <div className={classes.playerLifePoint}>
+            {props.playerLifePoints}
+        </div>
     );
 };
 
