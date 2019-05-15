@@ -8,8 +8,7 @@ const playerHealthControls = (props) => (
     <div className={classes.playerHealthControls}>
         <HalfButton
             player={props.playerNum}
-            btnClicked={props.halfBtnClick}
-            btnDisabled={props.controlDisabled} />
+            btnClicked={props.halfBtnClick} />
         <MinusButton
             player={props.playerNum}
             btnClicked={props.minusBtnClick}

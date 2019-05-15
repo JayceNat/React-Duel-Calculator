@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import classes from './PlayerOneArea.module.css';
 import PlayerAvatar from '../../components/PlayerArea/PlayerAvatar/PlayerAvatar';
 import PlayerNameplate from '../../components/PlayerArea/PlayerNameplate/PlayerNameplate';
@@ -6,29 +6,33 @@ import PlayerLifePoint from '../../components/PlayerArea/PlayerLifePoint/PlayerL
 import PlayerHealthBar from '../../components/PlayerArea/PlayerHealthBar/PlayerHealthBar';
 import PlayerHealthControls from '../../components/PlayerArea/PlayerHealthControls/PlayerHealthControls';
 
-const playerOneArea = (props) => (
-    <div className={classes.playerOneArea}>
-        <PlayerAvatar
-            player={props.playerNumber}
-            playerAvatar={props.playerAvatar} 
-            avatarChange={props.playerAvatarChanged} />
-        <PlayerNameplate 
-            player={props.playerNumber}
-            playerName={props.playerName} 
-            nameChange={props.playerNameChanged} />
-        <PlayerLifePoint
-            player={props.playerNumber}
-            playerLifePoints={props.playerLifePoints} />
-        <PlayerHealthBar
-            player={props.playerNumber}
-            healthPercent={props.playerHealthPercent} />
-        <PlayerHealthControls
-            playerNum={props.playerNumber}
-            halfBtnClick={props.halfButtonClicked}
-            plusBtnClick={props.plusButtonClicked}
-            minusBtnClick={props.minusButtonClicked}
-            controlDisabled={props.playerControlDisabled} />
-    </div>
-);
+class PlayerOneArea extends Component {
+    render() {
+        return (
+            <div className={classes.playerOneArea}>
+                <PlayerAvatar
+                    player={this.props.playerNumber}
+                    playerAvatar={this.props.playerAvatar} 
+                    avatarChange={this.props.playerAvatarChanged} />
+                <PlayerNameplate 
+                    player={this.props.playerNumber}
+                    playerName={this.props.playerName} 
+                    nameChange={this.props.playerNameChanged} />
+                <PlayerLifePoint
+                    player={this.props.playerNumber}
+                    playerLifePoints={this.props.playerLifePoints} />
+                <PlayerHealthBar
+                    player={this.props.playerNumber}
+                    healthPercent={this.props.playerHealthPercent} />
+                <PlayerHealthControls
+                    playerNum={this.props.playerNumber}
+                    halfBtnClick={this.props.halfButtonClicked}
+                    plusBtnClick={this.props.plusButtonClicked}
+                    minusBtnClick={this.props.minusButtonClicked}
+                    controlDisabled={this.props.playerControlDisabled} />
+            </div>
+        );
+    }
+};
 
-export default playerOneArea;
+export default PlayerOneArea;
