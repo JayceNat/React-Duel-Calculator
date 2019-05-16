@@ -19,7 +19,8 @@ const playerArea = (props) => {
                 nameChange={props.playerNameChanged} />
             <PlayerLifePoint
                 player={props.playerNumber}
-                playerLifePoints={props.playerLifePoints} />
+                playerLifePoints={props.playerLifePoints}
+                lifePointBtnClick={props.lifePointButtonClicked} />
             <PlayerHealthBar
                 player={props.playerNumber}
                 healthPercent={props.playerHealthPercent} />

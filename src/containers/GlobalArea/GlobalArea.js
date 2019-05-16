@@ -12,7 +12,9 @@ const globalArea = (props) => {
                 counterButtonClicked={props.clearCounterButtonClicked} />
             <PointCounterValueButtons 
                 counterAddBtnClicked={props.counterAddButtonClicked} />
-            <CoinTossDiceRollButtons />
+            <CoinTossDiceRollButtons
+                coinTossButtonClick={props.coinTossButtonClicked}
+                diceRollButtonClick={props.diceRollButtonClicked} />
         </div>
     );
 };

@@ -36,11 +36,15 @@ const reducer = (state = initialState, action) => {
         newState.playerNames[action.player] = action.newName;
         return newState;
     }
-    if (action.type === actionTypes.HALF_LP) {
+    if (action.type === actionTypes.LP_CLICK) {
         const newState = Object.assign({}, state);
+        return newState;
+    }
+    if (action.type === actionTypes.HALF_LP) {
+        const newState = {...state};
         newState.isNewGameState = false;
         newState.lifePoints[action.player] = state.lifePoints[action.player] / 2;
-        newState.healthBarPercent[action.player] = (newState.lifePoints[action.player] / defaultLifePoints).toFixed(0) * 100;
+        newState.healthBarPercent[action.player] = (newState.lifePoints[action.player] / defaultLifePoints).toFixed(3) * 100;
         
         console.log(newState);
         
@@ -50,7 +54,7 @@ const reducer = (state = initialState, action) => {
         const newState = Object.assign({}, state);
         newState.isNewGameState = false;
         newState.lifePoints[action.player] += state.pointCounterValue;
-        const newHealthPercent = (newState.lifePoints[action.player] / defaultLifePoints).toFixed(0) * 100;
+        const newHealthPercent = (newState.lifePoints[action.player] / defaultLifePoints).toFixed(3) * 100;
         newState.healthBarPercent[action.player] = newHealthPercent > 100 ? 100 : newHealthPercent;
         newState.pointCounterValue = 0;
         
@@ -63,7 +67,7 @@ const reducer = (state = initialState, action) => {
         const newPoints = state.lifePoints[action.player] - state.pointCounterValue
         newState.isNewGameState = false;
         newState.lifePoints[action.player] = (newPoints < 0) ? 0 : newPoints;
-        const newHealthPercent = (newState.lifePoints[action.player] / defaultLifePoints).toFixed(0) * 100;
+        const newHealthPercent = (newState.lifePoints[action.player] / defaultLifePoints).toFixed(3) * 100;
         newState.healthBarPercent[action.player] = newHealthPercent > 100 ? 100 : newHealthPercent;
         newState.pointCounterValue = 0;
 

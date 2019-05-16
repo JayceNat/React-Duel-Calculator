@@ -1,25 +1,23 @@
 import React, { Component } from 'react';
 import classes from './PlayerLifePoint.module.css';
+import Button from '../../Button/Button';
 
-class PlayerLifePoint extends Component { 
-
-    shouldComponentUpdate = (nextProps, nextState) => {
-        console.log('Props: ' + this.props.playerLifePoints, 'State: ' + nextProps.playerLifePoints);
-        return nextProps.playerLifePoints !== this.props.playerLifePoints;
-    }
-
-    componentWillReceiveProps(nextProps) {
-        const playerLP = this.props.playerLifePoints;
-    }
-
-    
+class playerLifePoint extends Component {
     render() {
         return (
             <div className={classes.playerLifePoint}>
-                {this.props.playerLifePoints}
+                <Button
+                    id={'lifePoints'}
+                    btnType={'lifePointButton'}
+                    label={'Life Points'}
+                    clicked={this.props.lifePointBtnClick}>
+                    <span>
+                        {this.props.playerLifePoints}
+                    </span>
+                </Button>
             </div>
         );
     }
 };
 
-export default PlayerLifePoint;
+export default playerLifePoint;

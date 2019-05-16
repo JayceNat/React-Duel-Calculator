@@ -5,6 +5,7 @@ class Button extends Component {
     getDynamicParameters = () => {
         let parameter = '';
         switch(this.props.btnType) {
+            case 'lifePointButton':
             case 'halfButton':
             case 'plusButton':
             case 'minusButton':

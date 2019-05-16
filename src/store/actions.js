@@ -1,5 +1,6 @@
 export const CHANGE_AVATAR = 'CHANGE_AVATAR';
 export const CHANGE_NAME = 'CHANGE_NAME';
+export const LP_CLICK = 'LP_CLICK';
 export const HALF_LP = 'HALF_LP';
 export const ADD_LP = 'ADD_LP';
 export const SUBTRACT_LP = 'SUBTRACT_LP';
