@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PlayerOneArea from '../PlayerOneArea/PlayerOneArea';
-import PlayerTwoArea from '../PlayerTwoArea/PlayerTwoArea';
+import PlayerArea from '../PlayerArea/PlayerArea';
 import GlobalArea from '../GlobalArea/GlobalArea';
 import FooterArea from '../FooterArea/FooterArea';
 import Aux from '../../hoc/Auxiliary';
@@ -11,7 +10,7 @@ class DuelCalculator extends Component {
     render () {
         return (
             <Aux>
-                <PlayerOneArea 
+                <PlayerArea 
                     playerNumber={'player1'}
                     playerAvatar={this.props.avatars.player1}
                     playerAvatarChanged={this.props.onAvatarChanged}
@@ -23,7 +22,7 @@ class DuelCalculator extends Component {
                     plusButtonClicked={this.props.onPlusButtonClicked}
                     minusButtonClicked={this.props.onMinusButtonClicked}
                     playerControlDisabled={this.props.ctrVal <= 0} />
-                {/* <PlayerTwoArea 
+                <PlayerArea 
                     playerNumber={'player2'}
                     playerAvatar={this.props.avatars.player2}
                     playerName={this.props.names.player2}
@@ -33,10 +32,11 @@ class DuelCalculator extends Component {
                     halfButtonClicked={this.props.onHalfButtonClicked}
                     plusButtonClicked={this.props.onPlusButtonClicked}
                     minusButtonClicked={this.props.onMinusButtonClicked}
-                    playerControlDisabled={this.props.ctrVal <= 0} /> */}
+                    playerControlDisabled={this.props.ctrVal <= 0} />
                 <GlobalArea 
                     pointCounterValue={this.props.ctrVal} 
-                    counterAddButtonClicked={() => this.props.onCounterAddClicked} />
+                    clearCounterButtonClicked={this.props.onClearCounterClicked}
+                    counterAddButtonClicked={this.props.onCounterAddClicked} />
                 <FooterArea 
                     isNewGameState={this.props.newGameState} 
                     newGameClicked={this.props.onNewGameClicked}

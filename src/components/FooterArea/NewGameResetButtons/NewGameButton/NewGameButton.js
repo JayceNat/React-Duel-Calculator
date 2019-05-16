@@ -9,7 +9,7 @@ const newGameButton = (props) => (
             key={'newGameBtn'}
             btnType={'newGameButton'}
             label={'New Game'}
-            // clicked={}
+            clicked={props.btnClicked}
             disabled={props.isNewGameState}>
             New Game
         </Button>

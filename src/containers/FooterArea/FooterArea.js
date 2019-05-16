@@ -6,6 +6,7 @@ const footerArea= (props) => (
     <div className={classes.footerArea}>
         <NewGameResetButtons 
             isNewGameState={props.isNewGameState}
+            newGameBtnClick={props.newGameClicked}
             resetBtnClick={props.resetButtonClicked} />
     </div>
 );

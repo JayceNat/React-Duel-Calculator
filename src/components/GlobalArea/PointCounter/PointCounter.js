@@ -9,9 +9,9 @@ const pointCounter = (props) => (
             key={'pointCtr'}
             btnType={'pointCounterButton'}
             label={'Point Counter'}
-            clicked={props.clicked}>
+            clicked={props.counterButtonClicked}>
             <span>
-                {props.pointCounterValue}
+                {props.ptCounterValue}
             </span>
         </Button>
     </div>

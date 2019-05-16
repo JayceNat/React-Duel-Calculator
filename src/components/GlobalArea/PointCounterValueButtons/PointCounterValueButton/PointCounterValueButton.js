@@ -7,9 +7,10 @@ const pointCounterValueButton = (props) => (
         <Button
             id={'pointCtrValueButton'} 
             key={'pointCtrValBtn'}
+            amnt={props.amount}
             btnType={'pointCounterValueButton'}
             label={'Point Counter Value'}
-            counterAddButtonClicked={() => props.onClick(10)}>
+            clicked={props.ctrAddBtnClicked}>
             {props.content}
         </Button>
     </div>

@@ -8,9 +8,10 @@ const globalArea = (props) => {
     return (
         <div className={classes.globalArea}>
             <PointCounter 
-                pointCounterValue={props.pointCounterValue} />
+                ptCounterValue={props.pointCounterValue}
+                counterButtonClicked={props.clearCounterButtonClicked} />
             <PointCounterValueButtons 
-                counterAddButtonClicked={() => props.counterAddButtonClicked} />
+                counterAddBtnClicked={props.counterAddButtonClicked} />
             <CoinTossDiceRollButtons />
         </div>
     );
