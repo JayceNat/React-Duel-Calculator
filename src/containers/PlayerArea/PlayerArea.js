@@ -8,7 +8,7 @@ import PlayerHealthControls from '../../components/PlayerArea/PlayerHealthContro
 
 const playerArea = (props) => {
     return (
-        <div className={classes.playerOneArea}>
+        <div className={classes.playerArea}>
             <PlayerAvatar
                 player={props.playerNumber}
                 playerAvatar={props.playerAvatar} 
@@ -16,7 +16,8 @@ const playerArea = (props) => {
             <PlayerNameplate 
                 player={props.playerNumber}
                 playerName={props.playerName} 
-                nameChange={props.playerNameChanged} />
+                nameChange={props.playerNameChanged}
+                gameReset={props.gameIsReset} />
             <PlayerLifePoint
                 player={props.playerNumber}
                 playerLifePoints={props.playerLifePoints}

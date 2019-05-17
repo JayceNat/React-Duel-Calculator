@@ -6,7 +6,7 @@ const playerHealthBar = (props) => {
         <div className={classes.playerHealthJar}>
             <div 
                 className={classes.playerHealthLiquid} 
-                style={{ width: `${props.percent}%` }} />
+                style={{ width: `${props.healthPercent}%` }} />
         </div>
     );
 };

@@ -1,7 +1,7 @@
 .playerHealthControls {
     display: inline-block;
-    width: 49%;
+    width: 97.5%;
+    align-content: center;
     border-style: double;
     border-color: darkslateblue;
-    margin-right: 2px;
 }

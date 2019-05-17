@@ -20,7 +20,7 @@ class PlayerNameplate extends Component {
                 type='text'
                 className={classes.nameplate}
                 placeholder={this.props.playerName}
-                value={this.state.name}
+                value={this.props.gameReset ? '' : this.state.name}
                 onChange={this.handleNameChanged} />
         );
     }

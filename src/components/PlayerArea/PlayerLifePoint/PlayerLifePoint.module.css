@@ -1,3 +1,9 @@
 .playerLifePoint {
     display: inline-block;
+    width: 100%;
+    min-width: 100%;
+}
+
+#screen1-inner {
+    width: 90%;
 }

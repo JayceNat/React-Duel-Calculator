@@ -1,3 +1,14 @@
 .pointCounterValueButtons {
+    display: flex;
+    background-color: black;
+}
+
+.tensCounters {
+    align-content: flex-start;
+    width: 100%;
+}
+
+.fivesCounters {
+    align-content: flex-end;
     width: 100%;
 }

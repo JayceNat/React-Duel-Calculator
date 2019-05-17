@@ -6,6 +6,7 @@ const defaultLifePoints = 8000;
 
 const initialState = {
     isNewGameState: true,
+    isResetState: true,
     playerAvatars: {
         player1: Banner1,
         player2: Banner2
@@ -28,11 +29,13 @@ const initialState = {
 const reducer = (state = initialState, action) => {
     if (action.type === actionTypes.CHANGE_AVATAR) {
         const newState = Object.assign({}, state);
+        newState.isResetState = false;
         newState.playerAvatars[action.player] = action.newAvatar;
         return newState;
     }
     if (action.type === actionTypes.CHANGE_NAME) {
         const newState = Object.assign({}, state);
+        newState.isResetState = false;
         newState.playerNames[action.player] = action.newName;
         return newState;
     }
@@ -41,10 +44,12 @@ const reducer = (state = initialState, action) => {
         return newState;
     }
     if (action.type === actionTypes.HALF_LP) {
-        const newState = {...state};
+        const newState = Object.assign({}, state);
         newState.isNewGameState = false;
-        newState.lifePoints[action.player] = state.lifePoints[action.player] / 2;
-        newState.healthBarPercent[action.player] = (newState.lifePoints[action.player] / defaultLifePoints).toFixed(3) * 100;
+        newState.isResetState = false;
+        newState.lifePoints[action.player] = parseFloat((state.lifePoints[action.player] / 2).toFixed(0));
+        const newHealthPercent = (newState.lifePoints[action.player] / defaultLifePoints).toFixed(3) * 100;
+        newState.healthBarPercent[action.player] = (newHealthPercent > 100) ? 100 : newHealthPercent;
         
         console.log(newState);
         
@@ -53,9 +58,10 @@ const reducer = (state = initialState, action) => {
     if (action.type === actionTypes.ADD_LP) {
         const newState = Object.assign({}, state);
         newState.isNewGameState = false;
+        newState.isResetState = false;
         newState.lifePoints[action.player] += state.pointCounterValue;
         const newHealthPercent = (newState.lifePoints[action.player] / defaultLifePoints).toFixed(3) * 100;
-        newState.healthBarPercent[action.player] = newHealthPercent > 100 ? 100 : newHealthPercent;
+        newState.healthBarPercent[action.player] = (newHealthPercent > 100) ? 100 : newHealthPercent;
         newState.pointCounterValue = 0;
         
         console.log(newState);
@@ -66,9 +72,10 @@ const reducer = (state = initialState, action) => {
         const newState = Object.assign({}, state);
         const newPoints = state.lifePoints[action.player] - state.pointCounterValue
         newState.isNewGameState = false;
+        newState.isResetState = false;
         newState.lifePoints[action.player] = (newPoints < 0) ? 0 : newPoints;
         const newHealthPercent = (newState.lifePoints[action.player] / defaultLifePoints).toFixed(3) * 100;
-        newState.healthBarPercent[action.player] = newHealthPercent > 100 ? 100 : newHealthPercent;
+        newState.healthBarPercent[action.player] = (newHealthPercent > 100) ? 100 : newHealthPercent;
         newState.pointCounterValue = 0;
 
         console.log(newState);
@@ -98,6 +105,7 @@ const reducer = (state = initialState, action) => {
     if (action.type === actionTypes.RESET) {
         const newState = Object.assign({}, state);
         newState.isNewGameState = true;
+        newState.isResetState = true;
         newState.playerAvatars.player1 = Banner1;
         newState.playerAvatars.player2 = Banner2;
         newState.playerNames.player1 = 'Player 1';
