@@ -1,6 +1,6 @@
 .pointCounterValueButtons {
     display: flex;
-    background-color: black;
+    background-color: transparent;
 }
 
 .tensCounters {
