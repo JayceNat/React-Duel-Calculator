@@ -1,23 +1,16 @@
-import React, { Component } from 'react';
-import classes from './PlayerLifePoint.module.css';
+import React from 'react';
 import Button from '../../Button/Button';
 
-class playerLifePoint extends Component {
-    render() {
-        return (
-            <div className={classes.playerLifePoint}>
-                <Button
-                    id={'lifePoints'}
-                    btnType={'lifePointButton'}
-                    label={'Life Points'}
-                    clicked={this.props.lifePointBtnClick}>
-                    <span>
-                        {this.props.playerLifePoints}
-                    </span>
-                </Button>
-            </div>
-        );
-    }
-};
+const playerLifePoint = (props) => (
+    <Button
+        id={'lifePoints'}
+        btnType={'lifePointButton'}
+        label={'Life Points'}
+        clicked={props.lifePointBtnClick}>
+        <span>
+            {props.playerLifePoints}
+        </span>
+    </Button>
+);
 
 export default playerLifePoint;
