@@ -148,6 +148,7 @@ const reducer = (state = initialState, action) => {
         newState.healthBarPercent.player2 = 100;
         newState.halfButtonClickCount = 0;
         newState.pointCounterValue = 0;
+        window.location.reload();
         return newState;
     }
     return state;
