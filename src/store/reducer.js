@@ -1,10 +1,14 @@
-import Banner1 from '../assets/images/Backgrounds/pic_banner1.jpg';
-import Banner2 from '../assets/images/Backgrounds/pic_banner2.jpg';
+import Banner1 from '../assets/Images/Backgrounds/pic_banner1.jpg';
+import Banner2 from '../assets/Images/Backgrounds/pic_banner2.jpg';
 import * as actionTypes from './actions';
+import * as modalTypes from './modals';
 
 const defaultLifePoints = 8000;
 
 const initialState = {
+    showModal: false,
+    modalContent: modalTypes.BLANK,
+    modalPlayerSetting: "",
     isNewGameState: true,
     isResetState: true,
     playerAvatars: {
@@ -23,14 +27,35 @@ const initialState = {
         player1: 100,
         player2: 100
     },
+    halfButtonClickCount: 0,
     pointCounterValue: 0
 }
 
 const reducer = (state = initialState, action) => {
-    if (action.type === actionTypes.CHANGE_AVATAR) {
+    if (action.type === actionTypes.CLOSE_MODAL) {
         const newState = Object.assign({}, state);
+        newState.showModal = false;
+        newState.modalPlayerSetting = '';
+        newState.modalContent = modalTypes.BLANK;
+        return newState;
+    }
+    if (action.type === actionTypes.CHANGING_AVATAR) {
+        const newState = Object.assign({}, state);
+        newState.showModal = true;
+        newState.modalContent = modalTypes.CHANGE_AVATAR;
+        newState.modalPlayerSetting = action.player;
+
+        console.log(newState);
+
+        return newState;
+    }
+    if (action.type === actionTypes.CHANGED_AVATAR) {
+        const newState = Object.assign({}, state);
+        newState.showModal = false;
+        newState.modalContent = modalTypes.BLANK;
         newState.isResetState = false;
         newState.playerAvatars[action.player] = action.newAvatar;
+        newState.modalPlayerSetting = '';
         return newState;
     }
     if (action.type === actionTypes.CHANGE_NAME) {
@@ -41,6 +66,9 @@ const reducer = (state = initialState, action) => {
     }
     if (action.type === actionTypes.LP_CLICK) {
         const newState = Object.assign({}, state);
+        newState.showModal = true;
+        newState.modalContent = modalTypes.LP_CLICK;
+        alert('Half Buttons have been clicked ' + state.halfButtonClickCount + ' times!');
         return newState;
     }
     if (action.type === actionTypes.HALF_LP) {
@@ -48,8 +76,10 @@ const reducer = (state = initialState, action) => {
         newState.isNewGameState = false;
         newState.isResetState = false;
         newState.lifePoints[action.player] = parseFloat((state.lifePoints[action.player] / 2).toFixed(0));
+        newState.halfButtonClickCount += 1;
         const newHealthPercent = (newState.lifePoints[action.player] / defaultLifePoints).toFixed(3) * 100;
         newState.healthBarPercent[action.player] = (newHealthPercent > 100) ? 100 : newHealthPercent;
+        
         
         console.log(newState);
         
@@ -79,7 +109,8 @@ const reducer = (state = initialState, action) => {
         newState.pointCounterValue = 0;
 
         console.log(newState);
-
+        
+        if (newState.lifePoints[action.player] === 0) alert(state.playerNames[action.player] + ' LOST the duel!')
         return newState;
     }
     if (action.type === actionTypes.CLEAR_COUNTER) {
@@ -99,6 +130,7 @@ const reducer = (state = initialState, action) => {
         newState.lifePoints.player2 = defaultLifePoints;
         newState.healthBarPercent.player1 = 100;
         newState.healthBarPercent.player2 = 100;
+        newState.halfButtonClickCount = 0;
         newState.pointCounterValue = 0;
         return newState;
     }
@@ -114,6 +146,7 @@ const reducer = (state = initialState, action) => {
         newState.lifePoints.player2 = defaultLifePoints;
         newState.healthBarPercent.player1 = 100;
         newState.healthBarPercent.player2 = 100;
+        newState.halfButtonClickCount = 0;
         newState.pointCounterValue = 0;
         return newState;
     }

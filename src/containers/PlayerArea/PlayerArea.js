@@ -12,7 +12,7 @@ const playerArea = (props) => {
             <PlayerAvatar
                 player={props.playerNumber}
                 playerAvatar={props.playerAvatar} 
-                avatarChange={props.playerAvatarChanged} />
+                avatarChanging={props.playerAvatarChanging} />
             <PlayerNameplate 
                 player={props.playerNumber}
                 playerName={props.playerName} 

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import classes from './PlayerAvatar.module.css';
 
-import tempImage from '../../../assets/images/Characters/BlueEyesWhiteDragon1.jpg';
-
 class PlayerAvatar extends Component {
     state = {
         avatar: ''
@@ -10,9 +8,9 @@ class PlayerAvatar extends Component {
 
     handleAvatarChange = (e) => {
         this.setState({
-            avatar: tempImage
+            avatar: ''
         }, () => {
-            this.props.avatarChange(this.props.player, this.state.avatar)
+            this.props.avatarChanging(this.props.player)
         })
     }
     

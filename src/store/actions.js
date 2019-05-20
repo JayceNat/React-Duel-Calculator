@@ -1,4 +1,6 @@
-export const CHANGE_AVATAR = 'CHANGE_AVATAR';
+export const CLOSE_MODAL = 'CLOSE_MODAL';
+export const CHANGING_AVATAR = 'CHANGING_AVATAR';
+export const CHANGED_AVATAR = 'CHANGED_AVATAR';
 export const CHANGE_NAME = 'CHANGE_NAME';
 export const LP_CLICK = 'LP_CLICK';
 export const HALF_LP = 'HALF_LP';

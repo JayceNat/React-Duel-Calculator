@@ -9,7 +9,12 @@ class App extends Component {
     return (
       <div className={classes.App}>
         <DuelCalculator
+          showModal={this.props.showModal}
+          modalContent={this.props.modalContent}
+          onModalClosed={this.props.onModalClosed}
+          modalPlayerSetting={this.props.modalPlayerSetting}
           avatars={this.props.avatars}
+          onAvatarChanging={this.props.onAvatarChanging}
           onAvatarChanged={this.props.onAvatarChanged}
           names={this.props.names}
           onNameChanged={this.props.onNameChanged}
@@ -35,11 +40,15 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
+      showModal: state.showModal,
+      modalContent: state.modalContent,
+      modalPlayerSetting: state.modalPlayerSetting,
       newGameState: state.isNewGameState,
       resetState: state.isResetState,
       avatars: state.playerAvatars,
       names: state.playerNames,
       lifePoints: state.lifePoints,
+      halfBtnClickCtr: state.halfButtonClickCount,
       healthPercents: state.healthBarPercent,
       ctrVal: state.pointCounterValue
   };
@@ -47,7 +56,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-      onAvatarChanged: (playerNumber, playerAvatar) => dispatch({type: actionTypes.CHANGE_AVATAR, player: playerNumber, newAvatar: playerAvatar}),
+      onModalClosed: () => dispatch({type: actionTypes.CLOSE_MODAL}),
+      onAvatarChanging: (playerNumber) => dispatch({type: actionTypes.CHANGING_AVATAR, player: playerNumber}),
+      onAvatarChanged: (playerNumber, playerAvatar) => dispatch({type: actionTypes.CHANGED_AVATAR, player: playerNumber, newAvatar: playerAvatar}),
       onNameChanged: (playerNumber, playerName) => dispatch({type: actionTypes.CHANGE_NAME, player: playerNumber, newName: playerName}),
       onLifePointButtonClicked: (playerNumber) => dispatch({type: actionTypes.LP_CLICK, player: playerNumber}),
       onHalfButtonClicked: (playerNumber) => dispatch({type: actionTypes.HALF_LP, player: playerNumber}),
