@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import classes from './ChangeAvatar.module.css';
-import image from '../../../../assets/Images/Characters/AmuletDragon.png'; //'../../../../assets/images/Characters/AstrographSorcerer.jpg';
-const imgUrls = [
-    image
-];
+import imgUrls from '../../../../assets/Images/Characters/Characters';
 
 class ChangeAvatar extends Component {    
     renderImageContent = (src) => {
@@ -21,12 +18,14 @@ class ChangeAvatar extends Component {
 
     render() {
         return (
-            <div className="gallery-container">
-                <h1>Select an Avatar!</h1>
-                <div className="gallery-grid">
+            (this.props.show ? 
+            <div className={classes.modalContainer}>
+                <p>Select an Avatar!</p>
+                <div className={classes.imageGrid}>
                     {imgUrls.map(this.renderImageContent)}
                 </div>
             </div>
+            : null)
         );
     }
 }

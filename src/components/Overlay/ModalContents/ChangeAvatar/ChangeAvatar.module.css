@@ -20,6 +20,68 @@
 }
 
 .img {
-    width: 250px;
-    height: 250px;
+    width: 225px;
+    height: 225px;
+}
+
+.modalContainer {
+    padding: .9375rem 0;
+}
+
+.imageGrid {
+    display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 8px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  
+  @include bp( x-small ) {
+    grid-template-columns: repeat(1, 1fr);
+  }	  
+  @include bp( small ) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include bp( large ) {
+    grid-template-columns: repeat(3, 1fr);
+  }	
+  img {
+    width: 100%;
+    border: 5px solid #fff;
+  }
+}
+
+.imageGrid div {
+    position: relative;
+  cursor: pointer;
+  &:before, &:after {
+    transition: .3s opacity ease;
+    opacity: 0;
+  }
+  &:after {
+    content: '\02194';
+    font-size: 80px;
+    position: absolute;
+    transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+    color: #fff;
+    left: 50%;
+    top: 50%;
+    display: block;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 4px;
+    left: 0;
+    right: 0;
+    background: rgba(#222, 0.5);
+    display: block;
+  }
+  &:hover {
+    &:before, &:after {
+      opacity: 1;
+      transition: .3s opacity ease;
+    }
+  }
 }
