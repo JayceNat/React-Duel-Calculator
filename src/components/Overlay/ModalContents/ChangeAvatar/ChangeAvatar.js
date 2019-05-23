@@ -5,7 +5,7 @@ import imgUrls from '../../../../assets/Images/Characters/Characters';
 class ChangeAvatar extends Component {    
     renderImageContent = (src) => {
         return (
-          <div key={''}>
+          <div key={Math.random()}>
             <img
                 className={classes.img}
                 src={src}
