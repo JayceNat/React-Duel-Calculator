@@ -1,5 +1,6 @@
 .Button {
     height: 40px;
+    cursor: pointer;
 }
 
 .lifePointButton {

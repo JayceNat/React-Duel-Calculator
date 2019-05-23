@@ -55,6 +55,7 @@ const reducer = (state = initialState, action) => {
         newState.modalContent = modalTypes.BLANK;
         newState.isResetState = false;
         newState.playerAvatars[action.player] = action.newAvatar;
+        newState.playerNames[action.player] = action.newAvatar.split('/').pop().replace(/\.[^/.]+$/, '').replace(/\.[^/.]+$/, '');
         newState.modalPlayerSetting = '';
         return newState;
     }
