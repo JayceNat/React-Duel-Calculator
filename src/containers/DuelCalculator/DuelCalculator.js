@@ -3,20 +3,14 @@ import classes from './DuelCalculator.module.css';
 import Aux from '../../hoc/Auxiliary';
 import Modal from '../../components/Overlay/Modal/Modal';
 import ChangeAvatar from '../../components/Overlay/ModalContents/ChangeAvatar/ChangeAvatar';
+import CoinToss from '../../components/Overlay/ModalContents/CoinToss/CoinToss';
+import DiceRoll from '../../components/Overlay/ModalContents/DiceRoll/DiceRoll';
 import PlayerArea from '../PlayerArea/PlayerArea';
 import GlobalArea from '../GlobalArea/GlobalArea';
 import FooterArea from '../FooterArea/FooterArea';
 import * as modalTypes from '../../store/modals';
 
-class DuelCalculator extends Component {    
-    coinToss = () => {
-        alert('Heads or Tails!');
-    }
-    
-    diceRoll = () => {
-        alert('Random number from 1-6!');
-    }
-    
+class DuelCalculator extends Component {
     render () {
         return (
             <Aux>
@@ -27,6 +21,10 @@ class DuelCalculator extends Component {
                         player={this.props.modalPlayerSetting}
                         show={this.props.modalContent === modalTypes.CHANGE_AVATAR}
                         clicked={this.props.onAvatarChanged} />
+                    <CoinToss
+                        show={this.props.modalContent === modalTypes.COIN_TOSS} />
+                    <DiceRoll
+                        show={this.props.modalContent === modalTypes.DICE_ROLL} />
                 </Modal>
                 <div className={classes.duelCalculator}>
                     <div className={classes.playerAreas}>
@@ -68,8 +66,8 @@ class DuelCalculator extends Component {
                             pointCounterValue={this.props.ctrVal} 
                             clearCounterButtonClicked={this.props.onClearCounterClicked}
                             counterAddButtonClicked={this.props.onCounterAddClicked}
-                            coinTossButtonClicked={this.coinToss}
-                            diceRollButtonClicked={this.diceRoll} />
+                            coinTossButtonClicked={this.props.onCoinTossClicked}
+                            diceRollButtonClicked={this.props.onDiceRollClicked} />
                     </div>
                     <FooterArea 
                         isNewGameState={this.props.newGameState} 

@@ -44,9 +44,6 @@ const reducer = (state = initialState, action) => {
         newState.showModal = true;
         newState.modalContent = modalTypes.CHANGE_AVATAR;
         newState.modalPlayerSetting = action.player;
-
-        console.log(newState);
-
         return newState;
     }
     if (action.type === actionTypes.CHANGED_AVATAR) {
@@ -122,6 +119,18 @@ const reducer = (state = initialState, action) => {
     if (action.type === actionTypes.ADD_TO_COUNTER) {
         const newState = Object.assign({}, state);
         newState.pointCounterValue = state.pointCounterValue + action.amount;
+        return newState;
+    }
+    if (action.type === actionTypes.COIN_TOSS_CLICK) {
+        const newState = Object.assign({}, state);
+        newState.showModal = true;
+        newState.modalContent = modalTypes.COIN_TOSS;
+        return newState;
+    }
+    if (action.type === actionTypes.DICE_ROLL_CLICK) {
+        const newState = Object.assign({}, state);
+        newState.showModal = true;
+        newState.modalContent = modalTypes.DICE_ROLL;
         return newState;
     }
     if (action.type === actionTypes.NEW_GAME) {

@@ -8,5 +8,7 @@ export const ADD_LP = 'ADD_LP';
 export const SUBTRACT_LP = 'SUBTRACT_LP';
 export const CLEAR_COUNTER = 'CLEAR_COUNTER';
 export const ADD_TO_COUNTER = 'ADD_TO_COUNTER';
+export const COIN_TOSS_CLICK = 'COIN_TOSS_CLICK';
+export const DICE_ROLL_CLICK = 'DICE_ROLL_CLICK';
 export const NEW_GAME = 'NEW_GAME';
 export const RESET = 'RESET';
