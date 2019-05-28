@@ -74,11 +74,7 @@ const reducer = (state = initialState, action) => {
         newState.lifePoints[action.player] = parseFloat((state.lifePoints[action.player] / 2).toFixed(0));
         newState.halfButtonClickCount += 1;
         const newHealthPercent = (newState.lifePoints[action.player] / defaultLifePoints).toFixed(3) * 100;
-        newState.healthBarPercent[action.player] = (newHealthPercent > 100) ? 100 : newHealthPercent;
-        
-        
-        console.log(newState);
-        
+        newState.healthBarPercent[action.player] = (newHealthPercent > 100) ? 100 : newHealthPercent;        
         return newState;
     }
     if (action.type === actionTypes.ADD_LP) {
@@ -89,9 +85,6 @@ const reducer = (state = initialState, action) => {
         const newHealthPercent = (newState.lifePoints[action.player] / defaultLifePoints).toFixed(3) * 100;
         newState.healthBarPercent[action.player] = (newHealthPercent > 100) ? 100 : newHealthPercent;
         newState.pointCounterValue = 0;
-        
-        console.log(newState);
-        
         return newState;
     }
     if (action.type === actionTypes.SUBTRACT_LP) {
@@ -103,9 +96,6 @@ const reducer = (state = initialState, action) => {
         const newHealthPercent = (newState.lifePoints[action.player] / defaultLifePoints).toFixed(3) * 100;
         newState.healthBarPercent[action.player] = (newHealthPercent > 100) ? 100 : newHealthPercent;
         newState.pointCounterValue = 0;
-
-        console.log(newState);
-        
         if (newState.lifePoints[action.player] === 0) alert(state.playerNames[action.player] + ' LOST the duel!')
         return newState;
     }
