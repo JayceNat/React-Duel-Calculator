@@ -5,10 +5,8 @@ import DiceRollButton from './DiceRollButton/DiceRollButton';
 
 const coinTossDiceRollButtons = (props) => (
     <div className={classes.coinTossDiceRollButtons}>
-        <CoinTossButton
-           coinTossBtnClick={props.coinTossButtonClick} />
-        <DiceRollButton
-            diceRollBtnClick={props.diceRollButtonClick}/>
+        <CoinTossButton />
+        <DiceRollButton />
     </div>
 )
 

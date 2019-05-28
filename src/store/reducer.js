@@ -64,9 +64,7 @@ const reducer = (state = initialState, action) => {
     }
     if (action.type === actionTypes.LP_CLICK) {
         const newState = Object.assign({}, state);
-        newState.showModal = true;
-        newState.modalContent = modalTypes.LP_CLICK;
-        alert('Half Buttons have been clicked ' + state.halfButtonClickCount + ' times!');
+        alert('Half Buttons have been clicked ' + state.halfButtonClickCount + ' time(s)!');
         return newState;
     }
     if (action.type === actionTypes.HALF_LP) {
@@ -119,18 +117,6 @@ const reducer = (state = initialState, action) => {
     if (action.type === actionTypes.ADD_TO_COUNTER) {
         const newState = Object.assign({}, state);
         newState.pointCounterValue = state.pointCounterValue + action.amount;
-        return newState;
-    }
-    if (action.type === actionTypes.COIN_TOSS_CLICK) {
-        const newState = Object.assign({}, state);
-        newState.showModal = true;
-        newState.modalContent = modalTypes.COIN_TOSS;
-        return newState;
-    }
-    if (action.type === actionTypes.DICE_ROLL_CLICK) {
-        const newState = Object.assign({}, state);
-        newState.showModal = true;
-        newState.modalContent = modalTypes.DICE_ROLL;
         return newState;
     }
     if (action.type === actionTypes.NEW_GAME) {

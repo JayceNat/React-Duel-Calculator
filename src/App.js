@@ -27,8 +27,6 @@ class App extends Component {
           ctrVal={this.props.ctrVal}
           onClearCounterClicked={this.props.onClearCounterClicked}
           onCounterAddClicked={this.props.onCounterAddClicked}
-          onCoinTossClicked={this.props.onCoinTossClicked}
-          onDiceRollClicked={this.props.onDiceRollClicked}
           resetState={this.props.resetState}
           onResetClicked={this.props.onResetClicked}
           newGameState={this.props.newGameState}
@@ -66,8 +64,6 @@ const mapDispatchToProps = dispatch => {
       onMinusButtonClicked: (playerNumber) => dispatch({type: actionTypes.SUBTRACT_LP, player: playerNumber}),
       onClearCounterClicked: () => dispatch({type: actionTypes.CLEAR_COUNTER}),
       onCounterAddClicked: (amountToAdd) => dispatch({type: actionTypes.ADD_TO_COUNTER, amount: amountToAdd}),
-      onCoinTossClicked: () =>dispatch({type: actionTypes.COIN_TOSS_CLICK}),
-      onDiceRollClicked: () =>dispatch({type: actionTypes.DICE_ROLL_CLICK}),
       onNewGameClicked: () => dispatch({type: actionTypes.NEW_GAME}),
       onResetClicked: () => dispatch({type: actionTypes.RESET})
   };

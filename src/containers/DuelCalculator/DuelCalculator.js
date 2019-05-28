@@ -3,8 +3,6 @@ import classes from './DuelCalculator.module.css';
 import Aux from '../../hoc/Auxiliary';
 import Modal from '../../components/Overlay/Modal/Modal';
 import ChangeAvatar from '../../components/Overlay/ModalContents/ChangeAvatar/ChangeAvatar';
-import CoinToss from '../../components/Overlay/ModalContents/CoinToss/CoinToss';
-import DiceRoll from '../../components/Overlay/ModalContents/DiceRoll/DiceRoll';
 import PlayerArea from '../PlayerArea/PlayerArea';
 import GlobalArea from '../GlobalArea/GlobalArea';
 import FooterArea from '../FooterArea/FooterArea';
@@ -21,10 +19,6 @@ class DuelCalculator extends Component {
                         player={this.props.modalPlayerSetting}
                         show={this.props.modalContent === modalTypes.CHANGE_AVATAR}
                         clicked={this.props.onAvatarChanged} />
-                    <CoinToss
-                        show={this.props.modalContent === modalTypes.COIN_TOSS} />
-                    <DiceRoll
-                        show={this.props.modalContent === modalTypes.DICE_ROLL} />
                 </Modal>
                 <div className={classes.duelCalculator}>
                     <div className={classes.playerAreas}>
@@ -65,9 +59,7 @@ class DuelCalculator extends Component {
                         <GlobalArea 
                             pointCounterValue={this.props.ctrVal} 
                             clearCounterButtonClicked={this.props.onClearCounterClicked}
-                            counterAddButtonClicked={this.props.onCounterAddClicked}
-                            coinTossButtonClicked={this.props.onCoinTossClicked}
-                            diceRollButtonClicked={this.props.onDiceRollClicked} />
+                            counterAddButtonClicked={this.props.onCounterAddClicked} />
                     </div>
                     <FooterArea 
                         isNewGameState={this.props.newGameState} 
