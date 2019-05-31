@@ -1,4 +1,4 @@
-Access the web version here: Duel-Calc(https://jaycenat.github.io/React-Duel-Calculator)
+Access the web version here: [React-Duel-Calculator](https://jaycenat.github.io/React-Duel-Calculator)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
