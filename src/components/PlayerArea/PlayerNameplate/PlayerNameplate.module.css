@@ -7,6 +7,8 @@
     color: antiquewhite;
     background: rgb(24, 24, 24);
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .nameplate:hover {

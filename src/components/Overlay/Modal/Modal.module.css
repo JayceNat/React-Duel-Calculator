@@ -18,7 +18,6 @@
 
 @media (min-height: 700px) {
     .modal {
-        position: fixed;
         left: 12%;
         right: 12%;
         top: 10%;
